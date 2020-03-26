@@ -1,4 +1,4 @@
-var Mynode = document.getElementsByTagName("li")
+var Mynode = document.getElementsByTagName("li")    //addition of delete button
 var i;
 for(i=0 ; i<Mynode.length ; ++i){
     var span = document.createElement("span");
@@ -8,7 +8,7 @@ for(i=0 ; i<Mynode.length ; ++i){
     Mynode[i].appendChild(span)
 }
 
-function newElement(){
+function newElement(){                     //adding new element
     var li = document.createElement("li");
     var input = document.getElementById("adTask").value;
     var t = document.createTextNode(input);
@@ -19,10 +19,10 @@ function newElement(){
     document.getElementById("UL").appendChild(li);
     }
 
-    document.getElementById("adTask").value = "";
+    document.getElementById("adTask").value = "";    //adding close button to new added task
     var span = document.createElement("SPAN");
     var txt = document.createTextNode("\u00D7");
-    span.className = "close";
+    span.className = "delete";
     span.appendChild(txt);
     li.appendChild(span);
     for (i = 0; i < close.length; i++) {
@@ -33,13 +33,13 @@ function newElement(){
    }
 }
 
-var list = document.querySelector('ul')
+var list = document.querySelector('ul')       //highlighting the task
 list.addEventListener('click',function(ev){
-    if(ev.target.tagName === 'li')
-       ev.target.classList.toggle('done');
+    if(ev.target.tagName === 'LI')
+    ev.target.classList.toggle('done');
 },false);
 
-var close = document.getElementsByClassName("delete");
+var close = document.getElementsByClassName("delete");   //delete any task added
 for(i=0 ; i < close.length ; ++i){
     close[i].onclick = function() {
         var div = this.parentElement;
